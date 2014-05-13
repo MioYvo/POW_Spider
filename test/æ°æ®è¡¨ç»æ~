@@ -1,0 +1,11 @@
+import pymssql
+
+conn = pymssql.connect(server="127.0.0.1",user="root",password="liurusi321",database="NuptPOW_DB1",charset="UTF-8")
+cur = conn.cursor()
+cur.execute("create table 2014_02_02(name nvarchar(100),age nvarchar(100))")
+cur.execute("show tables;")
+row=cur.fetchall()
+if row:
+	print row
+else:
+	print "no good"
